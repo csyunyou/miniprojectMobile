@@ -2,9 +2,6 @@
   <div class="videoPlayer">
     <video id="video-player" class="video-js vjs-big-play-centered">
       <source src="http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8" type="application/x-mpegURL">
-      <!-- <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/flv"> -->
-      <!-- <source src="http://localhost:3001/video/testFlv.flv" type="video/flv"> -->
-      <!-- <source src="http://localhost:3001/video/testmp4.mp4" type="video/mp4"> -->
     </video>
     <div class="videoInfo">
       <div class="title">
@@ -21,6 +18,7 @@
         <span>{{videoInfo.speaker}}</span>
       </div>
     </div>
+    <!-- <div>{{ $route.params.id }}</div> -->
   </div>
 </template>
 <script type="text/javascript">
