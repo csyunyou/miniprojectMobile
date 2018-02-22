@@ -11,18 +11,23 @@
   var fontEl = document.createElement('style');
   var metaEl = document.querySelector('meta[name="viewport"]');
 
-/*  dpr = window.devicePixelRatio || 1;
+  dpr = window.devicePixelRatio || 1;
   rem = docEl.clientWidth * dpr / 10;
-  scale = 1 / dpr;*/
-  dpr=2
-  rem = 375 * dpr / 10;
-  scale = 1;
+  scale = 1 / dpr;
+  /* dpr=2
+   rem = 375 * dpr / 10;
+   scale = 1;*/
   // 设置viewport，进行缩放，达到高清效果
-/*  metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');  */
-  metaEl.setAttribute('content', 'width=' + dpr * 375 + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+  // console.log(docEl.clientHeight)
+  metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+  /* metaEl.setAttribute('content', 'width=' + dpr * 375 + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');*/
+
+  // 设置data-dpr属性，留作的css hack之用
+  docEl.setAttribute('data-dpr', dpr);
   // 动态写入样式
   docEl.firstElementChild.appendChild(fontEl);
   fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+
   </script>
   <style type="text/css">
   body,
@@ -52,6 +57,16 @@
     padding: 0;
   }
 
+  html * {
+    font-size: 16px;
+  }
+
+  [data-dpr="2"] * {
+    font-size: 32px;
+  }
+
+
+
   </style>
 </head>
 
@@ -59,5 +74,7 @@
   <div id="app"></div>
   <!-- built files will be auto injected -->
 </body>
-
+<!-- <script type="text/javascript">
+  document.querySelector('.console').innerHTML=document.documentElement.clientHeight
+</script> -->
 </html>
