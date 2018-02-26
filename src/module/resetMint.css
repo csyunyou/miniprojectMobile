@@ -1,0 +1,13 @@
+/*.mint-cell-wrapper{
+	font-size: 32px;
+}*/
+
+.mint-field-state .mintui {
+    font-size: inherit;
+}
+.mintui {
+    font-size: inherit;
+}
+.mint-msgbox-title{
+	font-size:inherit;
+}

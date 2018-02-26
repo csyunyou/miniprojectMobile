@@ -1,7 +1,7 @@
 <template>
   <div class="videoPlayer">
     <video id="video-player" class="video-js vjs-big-play-centered">
-      <source src="http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8" type="application/x-mpegURL">
+      <source src="http://localhost:8080/hls/room.m3u8" type="application/x-mpegURL">
     </video>
     <div class="videoInfo">
       <div class="title">
